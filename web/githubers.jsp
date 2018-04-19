@@ -8,6 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="header.jsp"/>
 
+<div class="container">
+    <div class="row">
+        <div class="col1-sm">
 
 <ul class="list-group">
 
@@ -20,6 +23,8 @@
 </c:forEach>
 
 </ul>
-
+        </div>
+    </div>
+</div>
 </body>
 </html>

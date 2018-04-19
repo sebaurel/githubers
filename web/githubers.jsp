@@ -12,7 +12,11 @@
 <ul class="list-group">
 
 <c:forEach items="${guithuberListe}" var="gui">
-    <li class="list-group-item">${gui.name}</li>
+    <li class="list-group-item"><img src="${gui.avatarUrl}" width="60" height="auto"> ${gui.name} <br>
+        Login : ${gui.login}<br>
+        E-mail : ${gui.email}
+
+    </li>
 </c:forEach>
 
 </ul>

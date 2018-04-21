@@ -8,21 +8,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="header.jsp"/>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col1-sm">
+        <div class="col-auto">
+            <ul class="list-group">
+                <c:forEach items="${guithuberListe}" var="gui">
+                    <li class="list-group-item"><img src="${gui.avatarUrl}" width="60" height="auto"> <strong>${gui.name}</strong> <br>
+                        Login : ${gui.login}<br>
+                        E-mail : ${gui.email}
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+        <div class="col-8">
 
-<ul class="list-group">
 
-<c:forEach items="${guithuberListe}" var="gui">
-    <li class="list-group-item"><img src="${gui.avatarUrl}" width="60" height="auto"> ${gui.name} <br>
-        Login : ${gui.login}<br>
-        E-mail : ${gui.email}
-
-    </li>
-</c:forEach>
-
-</ul>
         </div>
     </div>
 </div>

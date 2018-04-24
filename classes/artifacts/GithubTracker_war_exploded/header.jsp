@@ -32,6 +32,5 @@
             <li class="nav-item">
                 <a class="nav-link" href="githubers.html">Githubers</a>
             </li>
-        </ul>
     </div>
 </nav>

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet(name = "GithubersServlet", urlPatterns = {"/githubers.html"})
+@WebServlet(name = "GithubersServlet", urlPatterns = {"/githubers"})
 public class GithubersServlet extends HttpServlet {
 
     GithuberDAO githuberDAO;

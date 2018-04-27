@@ -13,7 +13,7 @@
         <div class="col-auto">
             <ul class="list-group">
                 <c:forEach items="${guithuberListe}" var="gui">
-                    <li class="list-group-item"><img src="${gui.avatarUrl}" width="60" height="auto"> <strong>${gui.name}</strong> <br>
+                    <li class="list-group-item"><img src="${gui.avatar_url}" width="60" height="auto"> <strong>${gui.name}</strong> <br>
                         Login : ${gui.login}<br>
                         E-mail : ${gui.email}
                     </li>

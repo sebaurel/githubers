@@ -11,6 +11,7 @@ import java.util.Map;
 
 public interface GithuberDAO {
 
+    void saveGithuber(Githuber githuber);
 
     List<Githuber> getGithubers();
 

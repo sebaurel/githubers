@@ -10,10 +10,10 @@ import java.util.List;
 @Dependent
 public class GithubersService {
 
-    private GithuberDAO githuberDAO;
+    private MemoryGithuberDAO githuberDAO;
 
     @Inject
-    public GithubersService(GithuberDAO githuberDAO) {
+    public GithubersService(MemoryGithuberDAO githuberDAO) {
 
         this.githuberDAO = githuberDAO;
     }

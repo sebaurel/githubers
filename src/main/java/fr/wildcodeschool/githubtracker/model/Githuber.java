@@ -8,6 +8,7 @@ public class Githuber {
     private String email;
     private String login;
     private String avatar_url;
+    private String bio;
 
     public Githuber(String name, String email, String login, String avatar_url) {
         this.name = name;
@@ -50,5 +51,13 @@ public class Githuber {
 
     public void setAvatar_url(String avatar_url) {
         this.avatar_url = avatar_url;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }

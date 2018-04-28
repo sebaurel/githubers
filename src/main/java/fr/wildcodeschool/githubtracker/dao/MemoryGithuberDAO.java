@@ -18,10 +18,12 @@ import java.util.Map;
 //@ApplicationScoped
 @Dependent
 @Default
-public class MemoryGithuberDAO implements GithuberDAO {
+@InMemory
+public class MemoryGithuberDAO extends GithubUtils implements GithuberDAO {
+
+
 
     private Map<String, Githuber> mapGithubers = new HashMap<>();
-    @Inject private ObjectMapper om;
 
     @Override
     public void saveGithuber(Githuber githuber) {
@@ -41,20 +43,11 @@ public class MemoryGithuberDAO implements GithuberDAO {
         return listGithubersMemory;
     }
 
-    public Githuber parseGithuber(String login) {
-        //om = new ObjectMapper();
-        Githuber githuber = null;
-        try {
-            githuber = om.readValue(new URL("https://api.github.com/users/" + login), Githuber.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return githuber;
-    }
+
 
     @PostConstruct
     private void memoryGithuber (){
-        //saveGithuber(parseGithuber("sebaurel"));
+        //saveGithuber(GithubUtils.parseGithuber("sebaurel"));
         /*saveGithuber(parseGithuber("TomBtz"));
         saveGithuber(parseGithuber("JulTorres"));
         saveGithuber(parseGithuber("loloof64"));

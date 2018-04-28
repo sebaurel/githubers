@@ -4,12 +4,10 @@ import fr.wildcodeschool.githubtracker.model.Githuber;
 
 import java.util.List;
 
-public interface GithuberDAO {
+public interface GithuberDAO{
 
     void saveGithuber(Githuber githuber);
 
     List<Githuber> getGithubers();
-
-    Githuber parseGithuber(String login);
 
 }

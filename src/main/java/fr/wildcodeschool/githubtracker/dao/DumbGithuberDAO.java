@@ -30,11 +30,6 @@ public class DumbGithuberDAO implements GithuberDAO{
     }
 
     @Override
-    public Githuber parseGithuber(String login) {
-        return null;
-    }
-
-    @Override
     public void saveGithuber(Githuber githuber) {
 
     }

@@ -1,3 +1,7 @@
 body{
-    background-color: lightgrey;
+    //background-color: lightgrey;
+}
+
+.bio{
+    max-width: 300px;
 }

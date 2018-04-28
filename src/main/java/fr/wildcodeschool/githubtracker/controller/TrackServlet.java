@@ -1,6 +1,5 @@
 package fr.wildcodeschool.githubtracker.controller;
 
-import fr.wildcodeschool.githubtracker.service.GithubersService;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -12,12 +11,13 @@ import java.io.IOException;
 
 @WebServlet(name = "TrackServlet", urlPatterns = {"/track"})
 public class TrackServlet extends HttpServlet {
-    private @Inject GithubersService githuberService;
+    //private @Inject MemoryGithuberDAO memoryGithuberDAO;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String login = request.getParameter("login");
-        //githuberService.track(login);
+        //Githuber githuber = memoryGithuberDAO.parseGithuber(login);
+        //memoryGithuberDAO.saveGithuber(githuber);
 
         response.sendRedirect("githubers?login=" + login);
     }

@@ -15,7 +15,10 @@
                 <c:forEach items="${guithuberListe}" var="gui">
                     <li class="list-group-item"><img src="${gui.avatar_url}" width="60" height="auto"> <strong>${gui.name}</strong> <br>
                         Login : ${gui.login}<br>
-                        E-mail : ${gui.email}
+                        E-mail : ${gui.email}<br>
+                        <div class="bio">
+                            Bio : <em>${gui.bio}</em>
+                        </div>
                     </li>
                 </c:forEach>
             </ul>

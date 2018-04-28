@@ -15,21 +15,27 @@ import java.io.IOException;
 @WebServlet(name = "GithubersServlet", urlPatterns = {"/githubers"})
 public class GithubersServlet extends HttpServlet {
 
-    //GithuberDAO githuberDAO;
-    private @Inject GithubersService githuberService;
+    @Inject
+    GithubersService githubersService;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
     }
 
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String login = request.getParameter("login");
         if (login != null) {
-            githuberService.track(login);
-        }
+            try {
+                githubersService.track(login);
 
-        request.setAttribute("guithuberListe", githuberService.getAllGithubers());
+            }catch(NullPointerException e) {
+                e.printStackTrace();
+            }
+        }
+        request.setAttribute("guithuberListe", githubersService.getAllGithubers());
 
         getServletContext().getRequestDispatcher("/githubers.jsp" ).forward( request, response );
 

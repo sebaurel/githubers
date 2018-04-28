@@ -2,7 +2,7 @@ package fr.wildcodeschool.githubtracker.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class Githuber {
     private String name;
     private String email;

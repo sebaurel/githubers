@@ -3,19 +3,16 @@ package fr.wildcodeschool.githubtracker.dao;
 import fr.wildcodeschool.githubtracker.model.Githuber;
 
 import javax.enterprise.context.Dependent;
+import javax.enterprise.inject.Alternative;
 import java.util.ArrayList;
 import java.util.List;
 
 @Dependent
+@Alternative
 public class DumbGithuberDAO implements GithuberDAO{
 
     private List<Githuber> listGitubers = new ArrayList<>();
 
-
-    @Override
-    public void saveGithuber(Githuber githuber) {
-
-    }
 
     @Override
     public List<Githuber> getGithubers(){
@@ -32,8 +29,14 @@ public class DumbGithuberDAO implements GithuberDAO{
         return listGitubers;
     }
 
-    public List<Githuber> getListGitubers() {
-        return listGitubers;
+    @Override
+    public Githuber parseGithuber(String login) {
+        return null;
+    }
+
+    @Override
+    public void saveGithuber(Githuber githuber) {
+
     }
 
 }

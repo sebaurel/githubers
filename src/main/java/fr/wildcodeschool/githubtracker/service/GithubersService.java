@@ -10,10 +10,10 @@ import java.util.List;
 @Dependent
 public class GithubersService {
 
-    private MemoryGithuberDAO githuberDAO;
+    private GithuberDAO githuberDAO;
 
     @Inject
-    public GithubersService(MemoryGithuberDAO githuberDAO) {
+    public GithubersService(GithuberDAO githuberDAO) {
 
         this.githuberDAO = githuberDAO;
     }
@@ -40,6 +40,7 @@ public class GithubersService {
     }
 
     public void track(String login){
-        //TODO
+        Githuber githuber = githuberDAO.parseGithuber(login);
+        githuberDAO.saveGithuber(githuber);
     }
 }

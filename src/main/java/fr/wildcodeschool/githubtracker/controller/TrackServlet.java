@@ -1,38 +1,29 @@
 package fr.wildcodeschool.githubtracker.controller;
 
-import fr.wildcodeschool.githubtracker.dao.*;
 import fr.wildcodeschool.githubtracker.service.GithubersService;
 
-import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet(name = "GithubersServlet", urlPatterns = {"/githubers"})
-public class GithubersServlet extends HttpServlet {
-
-    //GithuberDAO githuberDAO;
+@WebServlet(name = "TrackServlet", urlPatterns = {"/track"})
+public class TrackServlet extends HttpServlet {
     private @Inject GithubersService githuberService;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String login = request.getParameter("login");
+        //githuberService.track(login);
 
+        response.sendRedirect("githubers?login=" + login);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String login = request.getParameter("login");
-        if (login != null) {
-            githuberService.track(login);
-        }
-
-        request.setAttribute("guithuberListe", githuberService.getAllGithubers());
-
-        getServletContext().getRequestDispatcher("/githubers.jsp" ).forward( request, response );
+        getServletContext().getRequestDispatcher("/track.jsp" ).forward( request, response );
 
     }
-
 }

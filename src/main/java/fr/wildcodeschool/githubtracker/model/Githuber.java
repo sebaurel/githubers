@@ -1,24 +1,38 @@
 package fr.wildcodeschool.githubtracker.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-//@JsonIgnoreProperties(ignoreUnknown = true)
 public class Githuber {
+    private long id;
     private String name;
     private String email;
     private String login;
     private String avatar_url;
     private String bio;
+    private String location;
+    private String url;
+    private long githuber_id;
 
-    public Githuber(String name, String email, String login, String avatar_url) {
+    public Githuber(long id, String name, String email, String login, String avatar_url, String bio, String location, String url, long githuber_id) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.login = login;
         this.avatar_url = avatar_url;
+        this.bio = bio;
+        this.location = location;
+        this.url = url;
+        this.githuber_id = githuber_id;
     }
 
-    public Githuber(){
+    public Githuber() {
+    }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -59,5 +73,29 @@ public class Githuber {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public long getGithuber_id() {
+        return githuber_id;
+    }
+
+    public void setGithuber_id(long github_id) {
+        this.githuber_id = github_id;
     }
 }

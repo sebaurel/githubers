@@ -12,13 +12,17 @@
     <div class="row">
         <div class="col-auto">
             <ul class="list-group">
-                <c:forEach items="${guithuberListe}" var="gui">
-                    <li class="list-group-item"><img src="${gui.avatar_url}" width="60" height="auto"> <strong>${gui.name}</strong> <br>
-                        Login : ${gui.login}<br>
-                        E-mail : ${gui.email}<br>
+                <c:forEach items="${githuberListe}" var="gi">
+                    <li class="list-group-item"><img src="${gi.avatar_url}" width="60" height="auto"> <strong>${gi.name}</strong> <br>
+                        Login : ${gi.login}<br>
+                        E-mail : ${gi.email}<br>
                         <div class="bio">
                             Bio : <em>${gui.bio}</em>
                         </div>
+                        <form method="post" action="untrack">
+                            <input type="hidden" value="${gi.login}" name="login" id="login"/>
+                            <input type="submit" value="unTrack"/>
+                        </form>
                     </li>
                 </c:forEach>
             </ul>

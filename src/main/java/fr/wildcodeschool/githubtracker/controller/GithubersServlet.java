@@ -26,7 +26,7 @@ public class GithubersServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String login = request.getParameter("login");
+        /*String login = request.getParameter("login");
         if (login != null) {
             try {
                 githubersService.track(login);
@@ -34,8 +34,8 @@ public class GithubersServlet extends HttpServlet {
             }catch(NullPointerException e) {
                 e.printStackTrace();
             }
-        }
-        request.setAttribute("guithuberListe", githubersService.getAllGithubers());
+        }*/
+        request.setAttribute("githuberListe", githubersService.getAllGithubers());
 
         getServletContext().getRequestDispatcher("/githubers.jsp" ).forward( request, response );
 

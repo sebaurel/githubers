@@ -10,4 +10,5 @@ public interface GithuberDAO{
 
     List<Githuber> getGithubers();
 
+    void deleteGithuber(String login);
 }
